@@ -5,7 +5,10 @@ class(x)
 nrow(x[VAL == '24',])
 
 library(openxlsx)
-dat <- read.xlsx(".\\Data\\getdata_data_DATA.gov_NGAP.xlsx")
+dat1 <- read.xlsx(".\\Data\\getdata_data_DATA.gov_NGAP.xlsx",)
+dat2 <- dat1[15:20,1:15]
+dat <- dat2[2:6,1:15]
+colnames(dat)<-as.character(dat2[1,])
 sum(dat$Zip*dat$Ext,na.rm=T)
 
 library(XML)
